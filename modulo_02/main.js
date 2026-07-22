@@ -1,13 +1,32 @@
 
-let nombre = prompt("ingrese su nombre")
+let nombre_o_apellido = prompt("ingrese su nombre o apellido")
 
-let clave = "romulo"
+const clave1 = "romulo"
 
-if(nombre === clave){
-    alert("Bienvenido " + nombre)
+const clave2 = "gartner"
+
+if(nombre_o_apellido === clave1){
+
+    alert("Bienvenido " + nombre_o_apellido)
+
     console.log("Bienvenido romulo")
+
+}else if(nombre_o_apellido === clave2){
+    alert("Bienvenido " + nombre_o_apellido)
+    console.log("Bienvenido gartner")
+
 }else{
-    alert("Nombre incorrecto")
-    console.log("Nombre incorrecto")
+    alert("los datos son incorrectos")
+    console.log("datos incorrectos")
 }
 
+
+let i = 0
+
+while(i <= 15 ){
+     alert(i)
+     console.log(i);
+     i++;
+ }
+
+ 
