@@ -11,10 +11,18 @@ saludarCliente("Romulo Gartner");
 // // Puntos con tipo flecha
 const duplicarPuntos = (puntos) => puntos * 2;
 
-let misPuntos = duplicarPuntos(50);
+let puntos = Number(prompt("Ingresá tus puntos:"));
 
-console.log(misPuntos); 
+if (puntos < 0) {
+  alert("Ingresá un número válido (mayor a 0).");
 
+} else {
+
+let misPuntos = duplicarPuntos(puntos);
+
+  console.log(misPuntos);
+  alert("Tus puntos duplicados son: " + misPuntos);
+}
 
 
 //Calcular el precio de las naranjas con return 
