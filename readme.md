@@ -1,17 +1,15 @@
-Instrucciones 
+Se creo 3 funciones siguiendo el algoritmo básico de todo programa (entradas de datos, procesamiento de datos y mostrar los resultado de salida de los mismos.)
 
-Estructura de archivos: Se Crea una carpeta con archivo  index.html  y un archivo  main.js  en su correspondiente carpeta. Vinculo el script en la etiqueta head del HTML con el atributo defer.
+Se ingreso información para procesar la funcion mediante el uso de parámetros y argumentos en todas las funciones.
 
-Me situe en  un contador de puntos de un juego.
+Uso de return: Al menos una funcion fue retornar un valor para utilizarse en el algoritmo.
 
-Implementación de Lógica:
+Función flecha: Al menos una funcion fue del tipo flecha, optimizando un proceso simple.
 
-Declare las variables necesarias (const  y  let ).
+Se realizo llamadas(invocadas) a las funciones utilizadas en el simulador
 
-Cree un bucle para interactuar con el usuario.
+Se agrego condicional (if), para que el proyecto funcione correctamente.
 
-Use un  if/else  para evaluar esos datos. 
-
-Muostre por consola y mediante un alert toda comunicación necesaria para el flujo del script.
+La interacción del simulador se hizo íntegramente sobre la Consola y Alert, con los datos previamente solicitados mediante prompt.
 
 Subi los archivos a un repositorio de GitHub y comparti la siguiente URL: https://github.com/romugartner/js-modu1.git 
