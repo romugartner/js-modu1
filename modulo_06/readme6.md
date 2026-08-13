@@ -1,24 +1,18 @@
-Modulo 6 - ya para editar
+Modulo 6 
 
-Cree una estructura donde: 
+- Conecte las operaciones aisladas de orden superior directamente con los datos que ingresa el usuario
+- Cree un array de objetos literal para simular mi base de datos.
+- Cree 4 propiedades para poder interactuar con las mismas.
 
-- Defini una Clase llamada Usuario.
-- Defini El constructor con 4 parametros (nombre, apellido, edad, profesion).
-
-Añadi Comportamiento:
-
-- Cree un método (esMayorDeEdad) dentro de la clase Usuario para realizar una operación lógica, donde se modifico el apellido con This.apellido
-
-Instanciación:
-
-- Cree al menos tres objetos diferentes usando la palabra clave new y guárde en constantes.
+Añadir Comportamiento:
+- Aplique mínimo 3 métodos de funciones de orden superior, las cuales fueron SORT , FIND, REDUCE
 
 Verificación:
 
-Ejecute los métodos de mis objetos creados y use console.log para mostrar los resultados finales de las propiedades modificadas.
+- Use  console.log  para mostrar los resultados finales.
 
 Contexto:
 
-- El script continuo con la logica y herramientas (ciclos, funciones, etc.) del simulador elegido, siendo la Class y los objetos parte del mismo y no una aplicación aislada
+El script continua con la lógica del simulador elegido
 
 - Subi los archivos a un repositorio de GitHub y comparti la siguiente URL: https://github.com/romugartner/js-modu1.git
