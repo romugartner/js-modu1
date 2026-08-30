@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stye.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+    
+ <main class="contenedor-principal">
+
+    <h1>Gestión de Usuarios</h1>
+
+    <!-- Formulario para agregar datos -->
+
+    <form id="formUsuario" class="formulario">
+      <input type="text" id="nombre" placeholder="Nombre"/>
+      <input type="text" id="apellido" placeholder="Apellido"/>
+      <input type="number" id="edad" placeholder="Edad"/>
+      <input type="text" id="profesion" placeholder="Profesión"/>
+
+      <button type="submit" id="btnAgregar">Agregar Usuario</button>
+    </form>
+
+    <!-- Controles: búsqueda (evento de teclado) y orden -->
+
+    <section class="barra-acciones">
+      <input type="text" id="inputBuscar" placeholder="Buscar por nombre o profesión..." />
+      <button type="button" id="btnOrdenar">Ordenar por Edad</button>
+    </section>
+
+    <!-- Mensaje de feedback visual -->
+
+    <p id="mensajeFeedback" class="feedback"></p>
+
+    <!-- Contenedor dinámico -->
+
+    <h2>Lista de Registros</h2>
+    <div id="contenedor-items" class="grid-usuarios"></div>
+  </main>
+
+</body>
+</html>
+
