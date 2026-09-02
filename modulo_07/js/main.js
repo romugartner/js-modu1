@@ -8,10 +8,10 @@ let usuarios = [
 
 // 2. Referencias del DOM
 const formUsuario = document.getElementById("formUsuario");
-const contenedorUsuarios = document.getElementById("contenedorUsuarios");
+const contenedorItems = document.getElementById("contenedor-items");
 const mensajeTotal = document.getElementById("mensajeTotal");
 const btnOrdenar = document.getElementById("btnOrdenar");
-const btnTop3 = document.getElementById("btnTop3");
+
 
 // 3. Función para renderizar la lista en el DOM
 function renderizarUsuarios(lista) {
@@ -74,15 +74,11 @@ formUsuario.addEventListener("submit", (e) => {
 
 // 7. Eventos de botones (sort y slice/top 3)
 btnOrdenar.addEventListener("click", () => {
-  usuarios.sort((a, b) => a.edad - b.edad);
-  renderizarUsuarios(usuarios);
+  // Usamos el operador spread [...] para no modificar el array original usuarios
+  const ordenadosAsc = [...usuarios].sort((a, b) => a.edad - b.edad);
+  renderizarUsuarios(ordenadosAsc);
 });
 
-btnTop3.addEventListener("click", () => {
-  const ordenadosDesc = [...usuarios].sort((a, b) => b.edad - a.edad);
-  const top3 = ordenadosDesc.slice(0, 3);
-  renderizarUsuarios(top3);
-});
 
 // Render inicial
 renderizarUsuarios(usuarios);
