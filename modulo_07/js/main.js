@@ -74,11 +74,10 @@ formUsuario.addEventListener("submit", (e) => {
 
 // 7. Eventos de botones (sort y slice/top 3)
 btnOrdenar.addEventListener("click", () => {
-  // Usamos el operador spread [...] para no modificar el array original usuarios
-  const ordenadosAsc = [...usuarios].sort((a, b) => a.edad - b.edad);
-  renderizarUsuarios(ordenadosAsc);
+  usuarios.sort((a, b) => a.edad - b.edad);
+  renderizarUsuarios(usuarios);
 });
 
 
-// Render inicial
-renderizarUsuarios(usuarios);
+
+
