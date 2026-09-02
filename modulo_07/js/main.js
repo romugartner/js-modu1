@@ -11,17 +11,20 @@ const formUsuario = document.getElementById("formUsuario");
 const contenedorItems = document.getElementById("contenedor-items");
 const mensajeTotal = document.getElementById("mensajeTotal");
 const btnOrdenar = document.getElementById("btnOrdenar");
-
+const inputBuscar = document.getElementById("inputBuscar");
 
 // 3. Función para renderizar la lista en el DOM
 function renderizarUsuarios(lista) {
-  contenedorUsuarios.innerHTML = ""; // Limpia el contenedor
+  contenedorItems.innerHTML = ""; // Corregido: usa contenedorItems
+
+  if (lista.length === 0) {
+    contenedorItems.innerHTML = "<p>No se encontraron registros.</p>";
+    return;
+  }
 
   lista.forEach((usuario) => {
     const tarjeta = document.createElement("div");
-    tarjeta.style.border = "1px solid #ccc";
-    tarjeta.style.margin = "8px 0";
-    tarjeta.style.padding = "10px";
+    tarjeta.classList.add("tarjeta-usuario");
 
     tarjeta.innerHTML = `
       <h3>${usuario.nombre} ${usuario.apellido}</h3>
@@ -30,7 +33,7 @@ function renderizarUsuarios(lista) {
       <button class="btn-eliminar" data-id="${usuario.id}">Eliminar</button>
     `;
 
-    contenedorUsuarios.appendChild(tarjeta);
+    contenedorItems.appendChild(tarjeta);
   });
 
   actualizarTotalEdades();
@@ -40,7 +43,9 @@ function renderizarUsuarios(lista) {
 // 4. Calcular total con reduce y mostrarlo en la vista
 function actualizarTotalEdades() {
   const total = usuarios.reduce((sumatoria, u) => sumatoria + u.edad, 0);
-  mensajeTotal.textContent = `Suma total de edades registradas: ${total}`;
+  if (mensajeTotal) {
+    mensajeTotal.textContent = `Suma total de edades registradas: ${total}`;
+  }
 }
 
 // 5. Asignar evento eliminar a cada botón renderizado
@@ -50,7 +55,7 @@ function activarBotonesEliminar() {
     boton.addEventListener("click", (e) => {
       const idAEliminar = Number(e.target.dataset.id);
       usuarios = usuarios.filter((u) => u.id !== idAEliminar);
-      renderizarUsuarios(usuarios); // Actualiza la vista
+      renderizarUsuarios(usuarios);
     });
   });
 }
@@ -61,10 +66,10 @@ formUsuario.addEventListener("submit", (e) => {
 
   const nuevoUsuario = {
     id: Date.now(),
-    nombre: document.getElementById("nombre").value,
-    apellido: document.getElementById("apellido").value,
+    nombre: document.getElementById("nombre").value.trim(),
+    apellido: document.getElementById("apellido").value.trim(),
     edad: Number(document.getElementById("edad").value),
-    profesion: document.getElementById("profesion").value,
+    profesion: document.getElementById("profesion").value.trim(),
   };
 
   usuarios.push(nuevoUsuario);
@@ -72,11 +77,27 @@ formUsuario.addEventListener("submit", (e) => {
   renderizarUsuarios(usuarios);
 });
 
-// 7. Eventos de botones (sort y slice/top 3)
+// 7. Evento de ordenamiento
 btnOrdenar.addEventListener("click", () => {
   usuarios.sort((a, b) => a.edad - b.edad);
   renderizarUsuarios(usuarios);
 });
+
+// 8. Evento de teclado (Búsqueda en tiempo real)
+if (inputBuscar) {
+  inputBuscar.addEventListener("input", () => {
+    const texto = inputBuscar.value.toLowerCase().trim();
+    const filtrados = usuarios.filter(
+      (u) =>
+        u.nombre.toLowerCase().includes(texto) ||
+        u.profesion.toLowerCase().includes(texto)
+    );
+    renderizarUsuarios(filtrados);
+  });
+}
+
+// 9. Render inicial para mostrar la lista al cargar la página
+renderizarUsuarios(usuarios);
 
 
 
