@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador de Usuarios - Pre-entrega 8</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <main class="contenedor-principal">
+    <h1>Gestión de Usuarios</h1>
+
+    <!-- Formulario para agregar registros -->
+    <form id="formUsuario" class="formulario">
+      <input type="text" id="nombre" placeholder="Nombre" required />
+      <input type="text" id="apellido" placeholder="Apellido" required />
+      <input type="number" id="edad" placeholder="Edad" required />
+      <input type="text" id="profesion" placeholder="Profesión" required />
+      <button type="submit" id="btnAgregar">Agregar Usuario</button>
+    </form>
+
+    <!-- Controles: Búsqueda, Ordenamiento y Vaciar -->
+    <section class="barra-acciones">
+      <input type="text" id="inputBuscar" placeholder="Buscar por nombre o profesión..." />
+      <button type="button" id="btnOrdenar">Ordenar por Edad</button>
+      <button type="button" id="btnVaciar" class="btn-peligro">Vaciar Todo</button>
+    </section>
+
+    <!-- Feedback y resumen -->
+    <p id="mensajeFeedback" class="feedback"></p>
+    <p id="mensajeTotal"></p>
+
+    <!-- Contenedor dinámico -->
+    <h2>Lista de Registros</h2>
+    <div id="contenedor-items" class="grid-usuarios"></div>
+  </main>
+
+  [neutralized-html-tag:script][neutralized-html-tag:script]
+</body>
+</html>
